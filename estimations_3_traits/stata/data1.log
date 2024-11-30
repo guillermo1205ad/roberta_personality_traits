@@ -1,0 +1,291 @@
+-------------------------------------------------------------------------------------------------------------
+      name:  <unnamed>
+       log:  C:\Users\guill\OneDrive\Escritorio\dom\data1.log
+  log type:  text
+ opened on:  10 Jan 2024, 23:22:50
+
+. 
+. use "datos1.dta", clear
+
+. 
+end of do-file
+
+. do "C:\Users\guill\AppData\Local\Temp\STD2638_000000.tmp"
+
+. label define l_founder 1 "Schumpeterian" 2 "Non-Schumpeterian"
+label l_founder already defined
+r(110);
+
+end of do-file
+
+r(110);
+
+. do "C:\Users\guill\AppData\Local\Temp\STD2638_000000.tmp"
+
+. cdf Extraversion, hgroup(founder) lpattern(shortdash solid) color(black black) graphr(fcolor(white))
+
+. graph export cdf_ext.png, as(png) replace
+(note: file cdf_ext.png not found)
+(file cdf_ext.png written in PNG format)
+
+. 
+end of do-file
+
+. do "C:\Users\guill\AppData\Local\Temp\STD2638_000000.tmp"
+
+. clorenz Extraversion, hgroup(founder) type(gen) title("a. Extraversion, Lorenz Generalized Curves") lpatter
+> n(solid shortdash dash) color(black black) graphr(fcolor(white))
+
+. graph export lorenzg_ext.png, as(png) replace
+(note: file lorenzg_ext.png not found)
+(file lorenzg_ext.png written in PNG format)
+
+. 
+end of do-file
+
+.  do "C:\Users\guill\AppData\Local\Temp\STD2638_000000.tmp"
+
+. clorenzs2d Extraversion Extraversion, cond1(founder==1 ) cond2(founder==2) min(0) max(1) type(gen) conf(ts)
+>  title("a. Arrar test for Extraversion") graphr(fcolor(white))
+number of observations (_N) was 94, now 101
+ESTIMATION IN PROGRESS
+(7 missing values generated)
+(7 missing values generated)
+. . . . . . . . . .  10.00 %
+. . . . . . . . . .  20.00 %
+. . . . . . . . . .  30.00 %
+. . . . . . . . . .  40.00 %
+. . . . . . . . . .  50.00 %
+. . . . . . . . . .  60.00 %
+. . . . . . . . . .  70.00 %
+. . . . . . . . . .  80.00 %
+. . . . . . . . . .  90.00 %
+. . . . . . . . . .  100.00 %
+END: WAIT FOR THE GRAPH...
+
+. graph export Arrar_ext.png, as(png) replace
+(note: file Arrar_ext.png not found)
+(file Arrar_ext.png written in PNG format)
+
+. 
+end of do-file
+
+.  do "C:\Users\guill\AppData\Local\Temp\STD2638_000000.tmp"
+
+. cdf Neuroticism, hgroup(founder) lpattern(shortdash solid) color(black black) graphr(fcolor(white))
+
+. graph export cdf_neu.png, as(png) replace
+(note: file cdf_neu.png not found)
+(file cdf_neu.png written in PNG format)
+
+. 
+end of do-file
+
+.  do "C:\Users\guill\AppData\Local\Temp\STD2638_000000.tmp"
+
+. clorenz Neuroticism, hgroup(founder) type(gen) title("b. Neuroticism, Lorenz Generalized Curves") lpattern(
+> solid shortdash dash) color(black black) graphr(fcolor(white))
+
+. graph export lorenzg_neu.png, as(png) replace
+(note: file lorenzg_neu.png not found)
+(file lorenzg_neu.png written in PNG format)
+
+. 
+end of do-file
+
+.  do "C:\Users\guill\AppData\Local\Temp\STD2638_000000.tmp"
+
+. clorenzs2d Neuroticism Neuroticism, cond1(founder==1 ) cond2(founder==2) min(0) max(1) type(gen) conf(ts) t
+> itle("b. Arrar test for Neuroticism") graphr(fcolor(white))
+ESTIMATION IN PROGRESS
+(7 missing values generated)
+(7 missing values generated)
+. . . . . . . . . .  10.00 %
+. . . . . . . . . .  20.00 %
+. . . . . . . . . .  30.00 %
+. . . . . . . . . .  40.00 %
+. . . . . . . . . .  50.00 %
+. . . . . . . . . .  60.00 %
+. . . . . . . . . .  70.00 %
+. . . . . . . . . .  80.00 %
+. . . . . . . . . .  90.00 %
+. . . . . . . . . .  100.00 %
+END: WAIT FOR THE GRAPH...
+
+. graph export Arrar_neu.png, as(png) replace
+(note: file Arrar_neu.png not found)
+(file Arrar_neu.png written in PNG format)
+
+. 
+end of do-file
+
+.  do "C:\Users\guill\AppData\Local\Temp\STD2638_000000.tmp"
+
+. cdf Agreeableness, hgroup(founder) lpattern(shortdash solid) color(black black) graphr(fcolor(white))
+
+. graph export cdf_agr.png, as(png) replace
+(note: file cdf_agr.png not found)
+(file cdf_agr.png written in PNG format)
+
+. 
+end of do-file
+
+.  do "C:\Users\guill\AppData\Local\Temp\STD2638_000000.tmp"
+
+. clorenz Agreeableness, hgroup(founder) type(gen) title("c. Agreeableness, Lorenz Generalized Curves") lpatt
+> ern(solid shortdash dash) color(black black) graphr(fcolor(white))
+
+. graph export lorenzg_agr.png, as(png) replace
+(note: file lorenzg_agr.png not found)
+(file lorenzg_agr.png written in PNG format)
+
+. 
+end of do-file
+
+.  do "C:\Users\guill\AppData\Local\Temp\STD2638_000000.tmp"
+
+. clorenzs2d Agreeableness Agreeableness, cond1(founder==1 ) cond2(founder==2) min(0) max(1) type(gen) conf(t
+> s) title("c. Arrar test for Agreeableness") graphr(fcolor(white))
+ESTIMATION IN PROGRESS
+(7 missing values generated)
+(7 missing values generated)
+. . . . . . . . . .  10.00 %
+. . . . . . . . . .  20.00 %
+. . . . . . . . . .  30.00 %
+. . . . . . . . . .  40.00 %
+. . . . . . . . . .  50.00 %
+. . . . . . . . . .  60.00 %
+. . . . . . . . . .  70.00 %
+. . . . . . . . . .  80.00 %
+. . . . . . . . . .  90.00 %
+. . . . . . . . . .  100.00 %
+END: WAIT FOR THE GRAPH...
+
+. graph export Arrar_agr.png, as(png) replace
+(note: file Arrar_agr.png not found)
+(file Arrar_agr.png written in PNG format)
+
+. 
+end of do-file
+
+.  do "C:\Users\guill\AppData\Local\Temp\STD2638_000000.tmp"
+
+. cdf Conscientiousness, hgroup(founder) lpattern(shortdash solid) color(black black) graphr(fcolor(white))
+
+. graph export cdf_con.png, as(png) replace
+(note: file cdf_con.png not found)
+(file cdf_con.png written in PNG format)
+
+. 
+end of do-file
+
+.  do "C:\Users\guill\AppData\Local\Temp\STD2638_000000.tmp"
+
+. clorenz Conscientiousness, hgroup(founder) type(gen) title("d. Conscientiousness, Lorenz Generalized Curves
+> ") lpattern(solid shortdash dash) color(black black) graphr(fcolor(white))
+
+. graph export lorenzg_con.png, as(png) replace
+(note: file lorenzg_con.png not found)
+(file lorenzg_con.png written in PNG format)
+
+. 
+end of do-file
+
+.  do "C:\Users\guill\AppData\Local\Temp\STD2638_000000.tmp"
+
+. clorenzs2d con, min(0) max(1) type(gen) conf(ts) title("d. Arrar test for Conscientiousness") graphr(fcolor
+> (white))
+namelist:  too few specified
+r(102);
+
+end of do-file
+
+r(102);
+
+. do "C:\Users\guill\AppData\Local\Temp\STD2638_000000.tmp"
+
+. clorenzs2d con, min(0) max(1) type(gen) conf(ts) title("d. Arrar test for Conscientiousness") graphr(fcolor
+> (white))
+namelist:  too few specified
+r(102);
+
+end of do-file
+
+r(102);
+
+. do "C:\Users\guill\AppData\Local\Temp\STD2638_000000.tmp"
+
+. clorenzs2d Conscientiousness Conscientiousness, cond1(founder==1 ) cond2(founder==2) min(0) max(1) type(gen
+> ) conf(ts) title("d. Arrar test for Conscientiousness") graphr(fcolor(white))
+ESTIMATION IN PROGRESS
+(7 missing values generated)
+(7 missing values generated)
+. . . . . . . . . .  10.00 %
+. . . . . . . . . .  20.00 %
+. . . . . . . . . .  30.00 %
+. . . . . . . . . .  40.00 %
+. . . . . . . . . .  50.00 %
+. . . . . . . . . .  60.00 %
+. . . . . . . . . .  70.00 %
+. . . . . . . . . .  80.00 %
+. . . . . . . . . .  90.00 %
+. . . . . . . . . .  100.00 %
+END: WAIT FOR THE GRAPH...
+
+. graph export Arrar_con.png, as(png) replace
+(note: file Arrar_con.png not found)
+(file Arrar_con.png written in PNG format)
+
+. 
+end of do-file
+
+. do "C:\Users\guill\AppData\Local\Temp\STD2638_000000.tmp"
+
+. cdf Openness, hgroup(founder) lpattern(shortdash solid) color(black black) graphr(fcolor(white))
+
+. graph export cdf_opn.png, as(png) replace
+(note: file cdf_opn.png not found)
+(file cdf_opn.png written in PNG format)
+
+. 
+end of do-file
+
+. do "C:\Users\guill\AppData\Local\Temp\STD2638_000000.tmp"
+
+. clorenz Openness, hgroup(founder) type(gen) title("e. Openness, Lorenz Generalized Curves") lpattern(solid 
+> shortdash dash) color(black black) graphr(fcolor(white))
+
+. graph export lorenzg_opn.png, as(png) replace
+(note: file lorenzg_opn.png not found)
+(file lorenzg_opn.png written in PNG format)
+
+. 
+end of do-file
+
+. do "C:\Users\guill\AppData\Local\Temp\STD2638_000000.tmp"
+
+. clorenzs2d Openness Openness, cond1(founder==1 ) cond2(founder==2) min(0) max(1) type(gen) conf(ts) title("
+> e. Arrar test for Openness") graphr(fcolor(white))
+ESTIMATION IN PROGRESS
+(7 missing values generated)
+(7 missing values generated)
+. . . . . . . . . .  10.00 %
+. . . . . . . . . .  20.00 %
+. . . . . . . . . .  30.00 %
+. . . . . . . . . .  40.00 %
+. . . . . . . . . .  50.00 %
+. . . . . . . . . .  60.00 %
+. . . . . . . . . .  70.00 %
+. . . . . . . . . .  80.00 %
+. . . . . . . . . .  90.00 %
+. . . . . . . . . .  100.00 %
+END: WAIT FOR THE GRAPH...
+
+. graph export Arrar_opn.png, as(png) replace
+(note: file Arrar_opn.png not found)
+(file Arrar_opn.png written in PNG format)
+
+. 
+end of do-file
+
+. exit, clear
